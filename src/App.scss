@@ -9,20 +9,25 @@
     background-repeat: no-repeat;
     height: 100vh;
     width: 100vw;
+    // display: flex;
 }
 
 .title {
     margin-top: 0;
+    margin-bottom: 2rem;
     color: hotpink;
-    margin-left: 20rem;
+    padding-left: 25rem;
     padding-top: 10rem;
     font-family:Arial;
+    font-size: 3rem;
+    // border-bottom: 1px solid cyan;
 }
 
 .riddles {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-left: 8rem;
 
     &__buttons {
         
@@ -36,29 +41,44 @@
 
     &__button--easy {
         background-color: cyan;
-        color:navy;
         border: 1px solid cyan;
         font-family:Arial;
-        // box-shadow: 4px 4px rgb(255, 255, 255);
     }
 
     &__button--medium {
         background-color: cyan;
         border: 1px solid cyan;
+        font-family:Arial;
     }
 
     &__button--hard {
         background-color: cyan;
         border: 1px solid cyan;
+        font-family:Arial;
     }
 
     &__button--getRiddle {
         background-color: hotpink;
         border: 1px solid hotpink;
+        font-family:Arial;
     }
 
     &__question {
         color: white;
+        width: 40rem;
+        font-family:Arial;
+        margin: 2rem 0;
+        text-align: center;
+        font-size: 1.5rem;
+    }
+
+    &__input {
+        border-radius: 0.5rem;
+        height: 2rem;
+        background-color: cyan;
+        border: 1px solid cyan;
+        margin-bottom: 1.5rem;
+        color: black;
     }
 
     &__form {
@@ -66,11 +86,20 @@
     }
 
     &__answer {
-        color: white;
+        color: hotpink;
+        font-family:Arial;
+    }
+
+    &__answer--text {
+        font-size: 1.5rem;
     }
 
     &__submit {
         background-color: hotpink;
         border: 1px solid hotpink;
+        font-family:Arial;
+        border-radius: 0.5rem;
+        margin-left: 0.5rem;
+        height: 2rem;
     }
 }

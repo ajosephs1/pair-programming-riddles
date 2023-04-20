@@ -6,7 +6,7 @@ function App() {
   const [riddles, setRiddles] = useState([]);
   const [difficulty, setDifficulty] = useState('')
   const [riddleObj, setRiddleObj] = useState(null)
-  const [answer, setAnswer] = useState({})
+  const [answer, setAnswer] = useState({answerText: "Let's see if you're a master riddler", mark: null})
 
   // console.log(riddles)
   // if stae easy take random using mathrandom index of riddles array between 0 and ten that also has diffivutly = state
@@ -92,17 +92,17 @@ function App() {
 
   return (
     <div className="App">
-      <h1 className='title'>WebDev Riddles</h1>
       <section className='riddles'>
+        <h1 className='title'>WebDev Riddles</h1>
         <div className="riddles__buttons">
           <button className="riddles__button riddles__button--easy" onClick={setEasy}>Easy</button>
           <button className="riddles__button riddles__button--medium" onClick={setMedium}>Medium</button>
           <button className="riddles__button riddles__button--hard" onClick={setHard}>Hard</button>
           <button className="riddles__button riddles__button--getRiddle" onClick={displayQuestion}>Get Riddle</button>
         </div>
-        <section className="riddles__question">{riddleObj ? <p>{riddleObj.question}</p> : <p>click get riddle</p>}</section>
+        <section className="riddles__question">{riddleObj ? <p className='riddles__question'>{riddleObj.question}</p> : <p>click get riddle</p>}</section>
         <form action="" className="riddles__form" onSubmit={formSubmit}>
-          <input type="text" placeholder='user answer' name='userAnswer' />
+          <input className="riddles__input" type="text" placeholder='user answer' name='userAnswer' />
           <button className="riddles__submit">Enter</button>
         </form>
         <section className="riddles__answer">
@@ -114,13 +114,13 @@ function App() {
               </div> :
               <div className='riddles__answer'>
                 <p>Try again next time! The answer is:</p>
-                <p>{answer.answerText}</p>
+                <p className='riddles__answer--text'>{answer.answerText}</p>
               </div>
           }
-          on click answer will go here </section>
+           </section>
       </section>
-      <p>meme
-      </p>
+      { answer.mark== null? <iframe src="https://giphy.com/embed/16DyNkohj3sh99MVVH" width="480" height="274" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>:<p>no image</p>
+      }
     </div>
   );
 }
