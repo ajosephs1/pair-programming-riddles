@@ -79,7 +79,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>WebDev Riddles</h1>
+      <h1 className='title'>WebDev Riddles</h1>
       <section className='riddles'>
         <div className="riddles__buttons">
           <button className="riddles__button riddles__button--easy" onClick={setEasy}>Easy</button>
