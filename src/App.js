@@ -119,7 +119,7 @@ function App() {
           }
            </section>
       </section>
-      { answer.mark== null? <iframe src="https://giphy.com/embed/16DyNkohj3sh99MVVH" width="480" height="274" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>:<p>no image</p>
+      { answer.mark== null? <iframe src="https://giphy.com/embed/16DyNkohj3sh99MVVH" className="riddles__gif" frameBorder="0"></iframe>:<iframe src="https://giphy.com/embed/xTiIzzOXswTHl6ZhaU" class="riddles__gif" frameBorder="0"></iframe>
       }
     </div>
   );

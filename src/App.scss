@@ -13,10 +13,11 @@
 }
 
 .title {
+    // align-self: flex-start;
     margin-top: 0;
     margin-bottom: 2rem;
     color: hotpink;
-    padding-left: 25rem;
+    // padding-left: 25rem;
     padding-top: 10rem;
     font-family:Arial;
     font-size: 3rem;
@@ -29,9 +30,9 @@
     align-items: center;
     margin-left: 8rem;
 
-    &__buttons {
+    // &__buttons {
         
-    }
+    // }
 
     &__button {
         border-radius: 0.5rem;
@@ -81,9 +82,9 @@
         color: black;
     }
 
-    &__form {
+    // &__form {
     
-    }
+    // }
 
     &__answer {
         color: hotpink;
@@ -102,4 +103,11 @@
         margin-left: 0.5rem;
         height: 2rem;
     }
+
+    &__gif{
+        margin-top: 5rem;
+        margin-left: 35rem;
+        width: 40%;
+    }
 }
+
