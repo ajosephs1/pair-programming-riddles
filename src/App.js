@@ -6,8 +6,9 @@ function App() {
   const [riddles, setRiddles] = useState([]);
   const [difficulty, setDifficulty] = useState('')
   const [riddleObj, setRiddleObj] = useState(null)
+  const [answer, setAnswer] = useState({})
 
-  console.log(riddles)
+  // console.log(riddles)
   // if stae easy take random using mathrandom index of riddles array between 0 and ten that also has diffivutly = state
   // console.log(riddles);
 
@@ -25,6 +26,7 @@ function App() {
       .then((response) => {
         setRiddles(response.data);
       })
+
   }
 
   function setMedium() {
@@ -44,8 +46,6 @@ function App() {
         setRiddles(response.data);
       })
   }
-
-
 
 
   // input state object array of riddles based on difficulty
@@ -77,6 +77,19 @@ function App() {
     }
   }
 
+  console.log(riddleObj)
+  function formSubmit(event) {
+    event.preventDefault()
+    let input = event.target.userAnswer.value
+
+    if (input.toLowerCase() == riddleObj.answer.toLowerCase()) {
+      setAnswer({ answerText: riddleObj.answer, mark: true })
+    }
+    else setAnswer({ answerText: riddleObj.answer, mark: false })
+  }
+
+  console.log(answer)
+
   return (
     <div className="App">
       <h1>WebDev Riddles</h1>
@@ -88,13 +101,26 @@ function App() {
           <button className="riddles__button riddles__button--getRiddle" onClick={displayQuestion}>Get Riddle</button>
         </div>
         <section className="riddles__question">{riddleObj ? <p>{riddleObj.question}</p> : <p>click get riddle</p>}</section>
-        <form action="" className="riddles__form" >
-          <input type="text" placeholder='user answer' />
+        <form action="" className="riddles__form" onSubmit={formSubmit}>
+          <input type="text" placeholder='user answer' name='userAnswer' />
           <button className="riddles__submit">Enter</button>
         </form>
-        <section className="riddles__answer">on click answer will go here </section>
+        <section className="riddles__answer">
+          {
+            answer.mark ?
+              <div className='riddles__answer'>
+                <p>Well done!</p>
+                <p>{answer.answerText}</p>
+              </div> :
+              <div className='riddles__answer'>
+                <p>Try again next time! The answer is:</p>
+                <p>{answer.answerText}</p>
+              </div>
+          }
+          on click answer will go here </section>
       </section>
-      <p>meme</p>
+      <p>meme
+      </p>
     </div>
   );
 }
